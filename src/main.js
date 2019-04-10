@@ -3,8 +3,10 @@ import App from './App.vue'
 import router from './router/'
 import store from './store'
 
-import './assets/styles/reset.css'
-import "./assets/styles/border.css"
+import "styles/reset.css"
+import "styles/border.css"
+import "styles/iconfont.css"
+
 
 import fastClick from 'fastclick'
 
