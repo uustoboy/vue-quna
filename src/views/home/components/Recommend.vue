@@ -1,0 +1,88 @@
+<template>
+  <div >
+      <div class="title">
+          热销推荐
+      </div>
+      <ul>
+          <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+              <img :src="item.imgUrl" class="item-img"/>
+              <div class="item-info">
+                  <p class="item-title">{{item.title}}</p>
+                  <p class="item-desc">{{item.desc}}</p>
+                  <button class="item-button">查看详情</button>
+              </div>
+          </li>
+      </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'HomeRecommend',
+  components: {
+
+  },
+  data () {
+    return {
+        recommendList : [
+            {
+                id : '001',
+                imgUrl : 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
+                title : '故宫',
+                desc : '故宫(AAAAA景区)'
+            },
+            {
+                id : '002',
+                imgUrl : 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
+                title : '故宫',
+                desc : '故宫(AAAAA景区)'
+            },
+            {
+                id : '003',
+                imgUrl : 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
+                title : '故宫',
+                desc : '故宫(AAAAA景区)'
+            }
+        ]
+    }
+  }
+}
+</script>
+<style lang="stylus" scoped>
+  //1rem = html font-size = 50px;
+  //86/100;
+  @import '~styles/varibles'
+  @import '~styles/mixins.styl'
+  .title
+    line-height .8rem
+    text-indent 2em
+    margin-top .2rem
+    background #eee
+  .item
+    display flex
+    height 1.9rem
+  .item-img
+    width 1.7rem
+    height 1.7rem
+    padding .1rem
+  .item-info
+    flex 1
+    padding .1rem
+    min-width 0
+  .item-title
+    font-size .32rem
+    line-height .54rem
+    ellipsis()
+  .item-desc
+    font-size .28rem
+    line-height .4rem
+    color #ccc
+    ellipsis()
+  .item-button
+    background #ff9300
+    padding 0 .1rem
+    bborder-radius .06rem
+    margin-top .16rem
+    line-height .44rem
+    color #fff
+</style>
