@@ -91,6 +91,7 @@ export default {
   //1rem = html font-size = 50px;
   //86/100;
   @import '~styles/varibles'
+  @import '~styles/mixins.styl'
   .icons >>> .swiper-slide {
     height 0
     padding-bottom 50%
@@ -123,5 +124,6 @@ export default {
     height .44rem
     color $darkTextColor
     text-align center
-    overflow:hidden
+    ellipsis()
+
 </style>
