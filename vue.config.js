@@ -4,9 +4,21 @@ function resolve (dir) {
 }
 module.exports = {
   lintOnSave: true,
-  chainWebpack: (config) => {
+  chainWebpack: config => {
     config.resolve.alias
-      .set('@', resolve('src'))
-      .set('styles', resolve('src/assets/styles/'))
+      .set("@", resolve("src"))
+      .set("styles", resolve("src/assets/styles/"));
+  },
+  publicPath: "./", //配置打包时的相对路径
+  devServer: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:8081",
+        changeOrigin: true,
+        pathRewrite: {
+          "^/api": "/mock"
+        }
+      }
+    }
   }
-}
+};

@@ -7,7 +7,7 @@
       <span class="iconfont">&#xe632;</span>
       输入城市/景点/游玩主体</div>
     <div class="header-right">
-      城市
+      {{this.city}}
       <span class="iconfont arrow-icon">&#xe6aa;</span>
     </div>
   </div>
@@ -16,6 +16,9 @@
 <script>
 export default {
   name: 'HomeHeader',
+  props:{
+    city: String
+  },
   components: {
 
   }
@@ -41,7 +44,7 @@ export default {
       flex 1
       background #fff
       border-radius .1rem
-      margin 0.12rem .2rem 0 
+      margin 0.12rem .2rem 0
       height .64rem
       line-height .64rem
       color #ccc
@@ -54,5 +57,5 @@ export default {
         font-size .24rem
         margin-left -.04rem
 
-  
+
 </style>
