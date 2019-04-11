@@ -29,7 +29,6 @@ export default {
 <style lang="stylus" scoped>
   //1rem = html font-size = 50px;
   //86/100;
-  @import '~styles/varibles'
   .header
     display flex
     height .86rem

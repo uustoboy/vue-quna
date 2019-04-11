@@ -20,5 +20,12 @@ module.exports = {
         }
       }
     }
+  },
+  css: {
+    loaderOptions: {
+      stylus: {
+        import: [resolve('./src/assets/styles/varibles.styl'), resolve('./src/assets/styles/mixins.styl')]
+      },
+    }
   }
 };

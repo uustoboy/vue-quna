@@ -20,7 +20,7 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-@import '~styles/varibles'
+
 .header
   position relative
   overflow hidden

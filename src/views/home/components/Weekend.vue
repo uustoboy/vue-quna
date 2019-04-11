@@ -36,8 +36,6 @@ export default {
 <style lang="stylus" scoped>
   //1rem = html font-size = 50px;
   //86/100;
-  @import '~styles/varibles'
-  @import '~styles/mixins.styl'
   .title
     line-height .8rem
     text-indent 2em
