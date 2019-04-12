@@ -4,7 +4,7 @@ const changeCity = (state, city)=>{
         if (localStorage.city) {
             localStorage.city = city;
         }
-    } catch (e) { }
+    } catch (e) { console.log(e);}
 }
 
 export default {
