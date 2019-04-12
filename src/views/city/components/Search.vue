@@ -11,7 +11,9 @@
       <ul>
         <li class="search-item border-botom"
           v-for="item of list"
-          :key="item.id">
+          :key="item.id"
+          @click="handleCityClick(item.name)"
+        >
           {{item.name}}
         </li>
         <li class="search-item border-bottom" v-show="hasNoData">
@@ -24,6 +26,7 @@
 
 <script>
 import Bscroll from 'better-scroll'
+import {mapMutations} from 'vuex'
 export default {
   name: 'CitySearch',
   props:{
@@ -46,6 +49,13 @@ export default {
       return !this.list.length
     }
   },
+  methods: {
+    handleCityClick(city){
+      this.changeCity(city);
+      this.$router.push('/');
+    },
+    ...mapMutations(['changeCity'])
+  },
   watch: {
     keyword () {
       if (this.timer) {
@@ -60,7 +70,7 @@ export default {
         for (let i in this.cities) {
           this.cities[i].forEach((value) => {
             if (value.spell.indexOf(this.keyword) > -1 || value.name.indexOf(this.keyword) > -1) {
-              result.push(value)
+              result.push(value);
             }
           })
         }
