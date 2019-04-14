@@ -7,13 +7,14 @@ module.exports = {
   chainWebpack: config => {
     config.resolve.alias
       .set("@", resolve("src"))
-      .set("styles", resolve("src/assets/styles/"));
+      .set("styles", resolve("src/assets/styles/"))
+      .set("common", resolve('src/common/'));
   },
   publicPath: "./", //配置打包时的相对路径
   devServer: {
     proxy: {
       "/api": {
-        target: "http://localhost:8081",
+        target: "http://localhost:8082",
         changeOrigin: true,
         pathRewrite: {
           "^/api": "/mock"
