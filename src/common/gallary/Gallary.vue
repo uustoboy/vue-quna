@@ -4,7 +4,7 @@
           <div class="wrapper">
             <swiper :options="swiperOption" >
             <!-- slides -->
-                <swiper-slide v-for="(item,index) of imgs" :key="index">
+                <swiper-slide v-for="(item,index) in imgs" :key="index">
                     <img class="gallary-img" :src="item" />
                 </swiper-slide>
                 <div class="swiper-pagination"  slot="pagination"></div>
@@ -50,23 +50,23 @@ export default {
 .container >>> .swiper-container
     overflow: inherit
 .container
-    z-index 99
-    display flex
-    flex-direction column
-    justify-content center
-    position fixed
-    left 0
-    right 0
-    top 0
-    bottom 0
-    background #000
+    display: flex
+    flex-direction: column
+    justify-content: center
+    z-index: 99
+    position: fixed
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    background: #000
 .wrapper
-    height 0
-    width 100%
-    padding-bottom 100%
+    height: 0
+    width: 100%
+    padding-bottom: 100%
     .swiper-pagination
-        color #fff
-        bottom -1rem
+        color: #fff
+        bottom: -1rem
 .gallary-img
-    width 100%
+    width: 100%
 </style>
