@@ -45,7 +45,10 @@ export default {
       }
   },
   activated(){
-      window.addEventListener('scroll',this.handleScroll);
+    window.addEventListener('scroll',this.handleScroll);
+  },
+  deactivvated(){
+      window.removeEventListener('scroll',this.handleScroll);
   },
   mounted () {
   },
