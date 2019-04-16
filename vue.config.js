@@ -5,6 +5,8 @@ function resolve (dir) {
 module.exports = {
   lintOnSave: true,
   chainWebpack: config => {
+    config.entry('index')
+      .add('babel-polyfill'),
     config.resolve.alias
       .set("@", resolve("src"))
       .set("styles", resolve("src/assets/styles/"))
@@ -16,7 +18,7 @@ module.exports = {
     proxy: {
       "/api": {
         target: "http://localhost:8083",
-        changeOrigin: true,
+        //changeOrigin: true,
         pathRewrite: {
           "^/api": "/mock"
         }
