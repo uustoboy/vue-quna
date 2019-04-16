@@ -25,7 +25,20 @@ export default {
     return {
       list:[
         {
-          title:'成人票'
+          title:'成人票',
+          children:[
+            {
+              title:'成人三馆联票',
+              children:[
+                {
+                  title:'成人三馆联票-某一连锁店'
+                }
+              ]
+            },
+            {
+              title:'成人五馆联票'
+            }
+          ]
         },
 
         {
