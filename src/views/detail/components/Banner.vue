@@ -1,14 +1,13 @@
 <template>
     <div>
         <div class="banner" @click="handelBannerClick">
-            <img class=“banner-img” src="https://img1.qunarzz.com/sight/p0/1411/7b/2c92f18baec679ff917831e01a282eb0.water.jpg_600x330_e74010bd.jpg" />
+            <img class=“banner-img” :src="bannerImg" />
             <div class="banner-info">
-                <div class="banner-tittle">京娘湖(AAAA景区)</div>
-                <div class="banner-number"><span class="iconfont banner-icon">&#xe651;</span>11</div>
+                <div class="banner-tittle">{{sightName}}</div>
+                <div class="banner-number"><span class="iconfont banner-icon">&#xe651;</span>{{bannerImgs.length}}</div>
             </div>
-
         </div>
-        <common-gallary @close="handleGallaryClose" :imgs="imgs" v-show="showGallary"></common-gallary>
+        <common-gallary @close="handleGallaryClose" :imgs="bannerImgs" v-show="showGallary"></common-gallary>
     </div>
 </template>
 
@@ -17,17 +16,16 @@ import CommonGallary from 'common/gallary/Gallary'
 export default {
   name: 'DetailBanner',
   props:{
+    sightName: String,
+    bannerImg: String,
+    bannerImgs: Array
   },
   components: {
       CommonGallary
   },
   data () {
     return {
-        imgs: [
-            'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/fusion/20193/44e690c7180af8513836f612fee1728e.jpg',
-            'http://img1.qunarzz.com/piao/fusion/1801/b9/b0242cb48f736202.jpg'
-        ],
-        showGallary: false
+      showGallary: false
     }
   },
   methods:{
